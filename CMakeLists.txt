@@ -5,10 +5,10 @@ set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 
-add_executable(driver
-    src/driver.cpp
+add_library(project_warnings INTERFACE)
+target_compile_options(project_warnings INTERFACE
+  $<$<COMPILE_LANGUAGE:CXX>:-Wall;-Wextra;-Wpedantic>
 )
 
-target_include_directories(driver PRIVATE
-    include
-)
+add_subdirectory(CPU_sorting)
+add_subdirectory(GPU_sorting)

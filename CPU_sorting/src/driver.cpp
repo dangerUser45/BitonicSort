@@ -22,8 +22,8 @@ int main() {
         std::cout << elt << " ";
     }
 
-    std::sort(copy_vec1.begin(), copy_vec1.end(), std::greater());
-    bitsort::bitonic_sort(copy_vec2, std::greater());
+    std::sort(copy_vec1.begin(), copy_vec1.end(), std::less());
+    bitsort::bitonic_sort(copy_vec2, std::less());
     
     std::cout << "\n\nSorted vector by std::sort" << std::endl;
     for(auto&& elt : copy_vec1) {
